@@ -1,0 +1,114 @@
+/* Shared header and footer for every Eloria page */
+header {
+    background: rgba(255, 250, 247, 0.98) !important;
+    padding: 20px clamp(24px, 8vw, 128px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    border-bottom: 1px solid #eadbd5;
+    box-shadow: 0 3px 15px rgba(80, 50, 40, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #8b5e5e;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.logo h2 { margin: 0; color: inherit; font: inherit; }
+
+body h1,
+body h2,
+body h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+.logo-mark {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #fffaf7;
+}
+
+.logo-mark img {
+    display: block;
+    width: 98px;
+    max-width: none;
+    transform: translate(-26px, -12px);
+}
+
+header nav {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: 1px solid #eadbd5;
+    border-radius: 999px;
+    background: rgba(244, 232, 225, 0.78);
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a { font-size: 16px; color: #302623; text-decoration: none; }
+header .icons { display: none; }
+
+.cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #eadbd5;
+    color: #513a34;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cart-link span {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8b5e5e;
+    color: #fff;
+    font-size: 12px;
+}
+
+footer {
+    background: #382929 !important;
+    color: #eee1dc !important;
+    text-align: center;
+    padding: 35px 20px !important;
+    letter-spacing: 0.5px;
+}
+
+footer p { margin: 5px; }
+
+footer p:last-child {
+    color: #c9a96b;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+}
+
+@media (max-width: 768px) {
+    header { padding: 18px 5% !important; flex-direction: column; gap: 14px; }
+    header nav { margin-left: 0; padding: 7px 12px; }
+    header nav ul { justify-content: center; flex-wrap: wrap; gap: 12px 20px; }
+    header nav ul li a { font-size: 14px; }
+    .cart-link { position: absolute; right: 5%; top: 20px; }
+}

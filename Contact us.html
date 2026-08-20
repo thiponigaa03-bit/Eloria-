@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Eloria</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="site-chrome.css">
+    <script src="contact.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo"><span class="logo-mark"><img src="eloria-logo.jpg" alt="Eloria logo"></span><span>Eloria</span></div>
+
+       <nav>
+
+				<ul>
+
+					<li>
+						<a href="home.html">Home</a>
+					</li>
+
+					<li>
+						<a href="shop.html">Shop</a>
+					</li>
+
+					<li>
+						<a href="about.html">About</a>
+					</li>
+
+					<li>
+						<a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+					</li>
+
+					<li>
+						<a href="Contact us.html">Contact us</a>
+					</li>
+
+				</ul>
+
+			</nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+
+        <div class="contact-intro">
+            <h1>Contact Us</h1>
+            <p>
+                We'd love to hear from you. Whether you have a question,
+                need assistance with an order, or simply want to say hello,
+                feel free to get in touch with Eloria.
+            </p>
+        </div>
+
+        <div class="contact-container">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+
+                <div class="info-box">
+                    <h3>📍 Visit Us</h3>
+                    <p>Wellawatte, Colombo, Sri Lanka</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📞 Call Us</h3>
+                    <p>XXXX XXXX</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>✉ Email Us</h3>
+                    <p>eloria@gamil.com</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>🕒 Opening Hours</h3>
+                    <p>Monday – Saturday<br>9.00 AM – 6.00 PM</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+
+                <form action="#" method="post">
+
+                    <div class="input-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name"
+                               placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="077 870 8906" inputmode="numeric"
+                               pattern="^(?:[+]94|0)7[0-9]{8}$"
+                               title="Enter a valid Sri Lankan mobile number, for example 0771234567."
+                               required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message"
+                                  rows="5"
+                                  placeholder="Write your message here..."
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Eloria. All Rights Reserved.</p>
+        <p>Handmade with ♡</p>
+    </footer>
+
+</body>
+</html>

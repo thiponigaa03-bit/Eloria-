@@ -1,0 +1,1137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"> </meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> </meta>
+		<title>Eloria | Handmade Jewellery</title>
+
+		<link rel="StyleSheet1" href="page1.css">
+
+
+		<style>
+
+			/* =====================================================
+   ELORIA - HANDMADE JEWELLERY
+   Elegant Luxury Website Design
+   ===================================================== */
+
+
+/* ---------- GOOGLE FONT ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image:url(pic0.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	background-attachment: fixed;
+    color: #3d2925;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+header {
+    width: 100%;
+    padding: 18px clamp(24px, 7vw, 112px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(148, 139, 129, 0.96);
+
+    box-shadow: 0 3px 20px rgba(80, 45, 35, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 50%;
+    flex: 0 0 48px;
+    background: #fffaf7;
+}
+
+.logo-mark img {
+    display: block;
+    width: 106px;
+    max-width: none;
+    transform: translate(-28px, -14px);
+}
+
+.logo h2 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 75px;
+    letter-spacing: 2px;
+    color: #302623;
+    font-style:oblique;
+    
+}
+
+
+/* NAVIGATION LINKS */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    color: #171414;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2c2a29;
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a66b55;
+    
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* ICONS */
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icons i {
+    font-size: 18px;
+    color: #68463c;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icons i:hover {
+    color: #b98268;
+    transform: translateY(-3px) scale(1.15);
+}
+
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+.hero {
+    min-height: 85vh;
+
+    background:
+        linear-gradient(
+            rgba(55, 35, 29, 0.35),
+            rgba(55, 35, 29, 0.35)
+        ),
+        url("back2.jpg") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    position: relative;
+}
+
+
+/* HERO TEXT */
+
+.hero-text {
+    max-width: 650px;
+    color: rgb(11, 10, 10);
+
+    animation: heroText 1.2s ease;
+}
+
+.hero-text h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 550px;
+    margin-bottom: 35px;
+}
+
+
+/* SHOP BUTTON */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background: #a66b55;
+    color: white;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    box-shadow: 0 8px 20px rgba(80, 45, 35, 0.25);
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #7d4d3e;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(80, 45, 35, 0.35);
+}
+
+
+/* HERO ANIMATION */
+
+@keyframes heroText {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+   ===================================================== */
+
+.categories,
+.materials,
+.products,
+.best,
+.why {
+    padding: 90px 7%;
+}
+
+section h2 {
+    position: relative;
+
+    text-align: center;
+
+    font-size: 42px;
+
+    color: #5b3930;
+
+    margin-bottom: 50px;
+}
+
+section h2::after {
+    content: "✦";
+
+    display: block;
+
+    color: #b98268;
+
+    font-size: 18px;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   SHOP BY OCCASION
+   ===================================================== */
+
+.category-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 22px;
+}
+
+
+/* CATEGORY CARD */
+
+.card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(80, 45, 35, 0.08);
+
+    transition: 0.4s;
+
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 18px 35px rgba(80, 45, 35, 0.16);
+}
+
+.card img {
+    height: 220px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card h3 {
+    text-align: center;
+
+    padding: 18px;
+
+    font-size: 23px;
+
+    color: #624137;
+}
+
+
+/* =====================================================
+   MATERIALS
+   ===================================================== */
+
+.materials {
+    background: #f6ebe5;
+}
+
+.material-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 22px;
+}
+
+.material {
+    padding: 0px;
+
+    background: rgba(164, 133, 108, 0.75);
+
+    border: 1px solid rgba(166,107,85,0.15);
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 24px;
+
+    color: #71483c;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.material:hover {
+    background: #a66b55;
+
+    color: rgb(169, 141, 133);
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 20px rgba(80,45,35,0.15);
+
+}
+.material img{
+      height: 220px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+
+}
+
+.material h3{
+     text-align: center;
+
+    padding: 3px;
+
+    font-size: 30px;
+
+    color: #624137;
+
+}
+
+
+/* =====================================================
+   PRODUCTS
+   ===================================================== */
+
+.product-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.product {
+    position: relative;
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    padding-bottom: 25px;
+
+    box-shadow:
+        0 7px 25px rgba(80,45,35,0.08);
+
+    transition: 0.4s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 18px 35px rgba(80,45,35,0.16);
+}
+
+.product img {
+    height: 280px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.product:hover img {
+    transform: scale(1.06);
+}
+
+.product h3 {
+    font-size: 24px;
+
+    color: #57372f;
+
+    margin-top: 18px;
+}
+
+.product p {
+    color: #a66b55;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin: 8px 0 15px;
+}
+
+
+/* ADD TO CART BUTTON */
+
+.product button {
+    border: none;
+
+    background: #a66b55;
+
+    color: white;
+
+    padding: 11px 25px;
+
+    border-radius: 25px;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product button:hover {
+    background: #754638;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   BEST SELLERS
+   ===================================================== */
+
+.best {
+    background: #f6ebe5;
+}
+
+
+/* =====================================================
+   WHY CHOOSE ELORIA
+   ===================================================== */
+
+.why {
+    background: #fffaf7;
+}
+
+.why-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+
+    text-align: center;
+}
+
+.why-container > div {
+    padding: 30px 20px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(80,45,35,0.06);
+
+    transition: 0.3s;
+}
+
+.why-container > div:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(80,45,35,0.12);
+}
+
+.why-container i {
+    font-size: 38px;
+
+    color: #a66b55;
+
+    margin-bottom: 15px;
+}
+
+.why-container h3 {
+    font-size: 23px;
+
+    color: #57372f;
+
+    margin-bottom: 8px;
+}
+
+.why-container p {
+    font-size: 14px;
+
+    color: #77615a;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #3c2924,
+            #594038
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 65px 7% 25px;
+}
+
+.footer-content h2 {
+    color: #f5ddd1;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: #dfcbc2;
+
+    margin: 8px 0;
+
+    font-size: 14px;
+}
+
+
+/* SOCIAL MEDIA */
+
+.footer-content i {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 18px 5px 0;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.footer-content i:hover {
+    background: #b98268;
+
+    border-color: #b98268;
+
+    transform: translateY(-5px);
+}
+
+
+/* COPYRIGHT */
+
+.copyright {
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+
+    color: #cbb8b0;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .category-container {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .product-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .why-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    nav ul {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 75vh;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .category-container,
+    .material-grid,
+    .product-container,
+    .why-container {
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+        font-size: 34px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .logo h2 {
+        font-size: 32px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .icons {
+        gap: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .categories,
+    .materials,
+    .products,
+    .best,
+    .why {
+        padding: 65px 5%;
+    }
+
+}
+		</style>
+		<link rel="stylesheet" href="site-chrome.css">
+	</head>
+
+	<body>
+
+		<!-- ================= NAVIGATION ================= -->
+
+		<header>
+
+			<div class="logo"><span class="logo-mark"><img src="eloria-logo.jpg" alt="Eloria logo"></span><span>Eloria</span></div>
+
+			<nav>
+
+				<ul>
+
+					<li>
+						<a href="home.html">Home</a>
+					</li>
+
+					<li>
+						<a href="shop.html">Shop</a>
+					</li>
+
+					<li>
+						<a href="about.html">About</a>
+					</li>
+
+					<li>
+						<a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+					</li>
+
+					<li>
+						<a href="Contact us.html">Contact us</a>
+					</li>
+
+				</ul>
+
+			</nav>
+		</header>
+
+
+		<!-- ================= HERO ================= -->
+
+		<section class="hero">
+
+			<div class="hero-text">
+
+				<h1>Elegant Handmade Jewellery</h1>
+
+				<p>
+					Discover unique handmade earrings,
+					necklaces, bracelets, rings and anklets
+					crafted with love.
+				</p>
+
+				<a href="shop.html" class="btn">
+					Shop Now
+				</a>
+
+			</div>
+
+		</section>
+
+
+		<!-- ================= CATEGORIES ================= -->
+
+		<section class="categories">
+
+			<h2>Shop By Occasion</h2>
+
+			<div class="category-container">
+
+				<div class="card">
+
+					<img src="birthday.jpg"> </img>
+
+						<h3>Birthday</h3>
+
+					</div>
+
+				<div class="card">
+
+					<img src="wedd.jpeg"> </img>
+
+						<h3>Wedding</h3>
+
+					</div>
+
+				<div class="card">
+
+					<img src="party.jpg"> </img>
+
+						<h3>Party</h3>
+
+					</div>
+
+				<div class="card">
+
+					<img src="casual.jpg"> </img>
+
+						<h3>Casual</h3>
+
+					</div>
+
+				<div class="card">
+
+					<img src="office.jpg"> </img>
+
+						<h3>Office Wear</h3>
+
+					</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ================= MATERIALS ================= -->
+
+		<section class="materials">
+
+			<h2>Shop By Material</h2>
+
+			<div class="material-grid">
+
+				<div class="material">
+                    <img src="pearl.jpg"> </img>
+                    <h3>Pearls</h3>
+
+                </div>
+
+				<div class="material">
+                    <img src="terra.jpg"> </img>
+                    <h3>Terracotta </h3>
+                </div>
+
+				<div class="material">
+                    <img src="resin.jpg"> </img>
+                    <h3>Resin</h3>
+                </div>
+
+				<div class="material">
+                    <img src="sea.jpg"> </img>
+                    <h3>Sea Shells</h3>
+                </div>
+
+
+				<div class="material">
+                    <img src="work.jpg"> </img>
+                    <h3>Thread Work</h3>
+                </div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ================= NEW ARRIVALS ================= -->
+
+		<section class="products">
+
+			<h2>New Arrivals</h2>
+
+			<div class="product-container">
+
+				<div class="product">
+
+					<img src="newarrivel1.jpg"> </img>
+
+						<h3>Pearl Necklace</h3>
+
+						<p>Rs. 3500</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+				<div class="product">
+
+					<img src="resin ear.jpg"> </img>
+
+						<h3>Resin Earrings</h3>
+
+						<p>Rs. 2200</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+				<div class="product">
+
+					<img src="terra set.jpg"> </img>
+
+						<h3>Terracotta Set</h3>
+
+						<p>Rs. 4200</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+				<div class="product">
+
+					<img src="braclet.jpg"> </img>
+
+						<h3>Bead Bracelet</h3>
+
+						<p>Rs. 1800</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ================= BEST SELLERS ================= -->
+
+		<section class="best">
+
+			<h2>Best Sellers</h2>
+
+			<div class="product-container">
+
+				<div class="product">
+
+					<img src="necklace.jpg"> </img>
+
+						<h3>Thread Necklace</h3>
+
+						<p>Rs. 3000</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+				<div class="product">
+
+					<img src="shell.jpg"> </img>
+
+						<h3>Shell Earrings</h3>
+
+						<p>Rs. 2500</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+				<div class="product">
+
+					<img src="lux.jpg"> </img>
+
+						<h3>Luxury Pearl Set</h3>
+
+						<p>Rs. 4500</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+				<div class="product">
+
+					<img src="wed.jpg"> </img>
+
+						<h3>Wedding Collection</h3>
+
+						<p>Rs. 18000</p>
+
+						<button>Add to Cart</button>
+
+					</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ================= WHY CHOOSE US ================= -->
+
+		<section class="why">
+
+			<h2>Why Choose Eloria?</h2>
+
+			<div class="why-container">
+
+				<div>
+
+					<i class="fa-solid fa-gem"></i>
+
+					<h3>Handmade</h3>
+
+					<p>Every piece is carefully handcrafted.</p>
+
+				</div>
+
+				<div>
+
+					<i class="fa-solid fa-truck"></i>
+
+					<h3>Island Wide Delivery</h3>
+
+					<p>Fast and secure delivery.</p>
+
+				</div>
+
+				<div>
+
+					<i class="fa-solid fa-gift"></i>
+
+					<h3>Gift Wrapping</h3>
+
+					<p>Beautiful gift packaging available.</p>
+
+				</div>
+
+				<div>
+
+					<i class="fa-solid fa-lock"></i>
+
+					<h3>Secure Payment</h3>
+
+					<p>Safe checkout process.</p>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ================= FOOTER ================= -->
+
+		<footer>
+
+			<p>© 2026 Eloria. All Rights Reserved.</p>
+			<p>Handmade with ♡</p>
+
+		</footer>
+
+		<script src="script.js"></script>
+
+	</body>
+</html>

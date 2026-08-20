@@ -1,0 +1,484 @@
+/* =========================================
+   ELORIA - ELEGANT JEWELLERY WEBSITE
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffaf7;
+    color: #4a3838;
+    line-height: 1.7;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+header {
+    background: rgba(255, 250, 247, 0.98);
+
+    padding: 20px clamp(24px, 8vw, 128px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #eadbd5;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(70, 45, 40, 0.08);
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    color: #8b5e5e;
+
+    letter-spacing: 3px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    border-radius: 50%;
+    flex: 0 0 46px;
+    background: #fffaf7;
+}
+
+.logo-mark img {
+    display: block;
+    width: 102px;
+    max-width: none;
+    transform: translate(-27px, -13px);
+}
+
+
+/* Navigation */
+
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    color: #171414;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2c2a29;
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a66b55;
+    
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ---------- HERO / ABOUT BANNER ---------- */
+
+.hero {
+    min-height: 500px;
+
+    background:
+        linear-gradient(
+            rgba(55, 35, 35, 0.45),
+            rgba(55, 35, 35, 0.45)
+        ),
+        url("back2.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    max-width: 750px;
+    padding: 30px;
+
+    color: white;
+}
+
+
+/* Hero title */
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 70px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    color: #fff4d6;
+    font-size: clamp(64px, 9vw, 108px);
+    line-height: 0.95;
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+    font-size: clamp(18px, 2vw, 23px);
+    font-weight: 300;
+
+    letter-spacing: 1px;
+    color: #fffdf7;
+    text-shadow: 0 2px 12px rgba(56, 30, 20, 0.6);
+}
+
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    padding: 90px 8%;
+}
+
+
+/* Section title */
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    text-align: center;
+
+    color: #6f4b4b;
+
+    font-size: 48px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Gold decoration under heading */
+
+.section-title::after {
+    content: "✦";
+
+    display: block;
+
+    color: #b9975b;
+
+    font-size: 18px;
+
+    margin-top: 8px;
+}
+
+
+/* ---------- TEXT ---------- */
+
+section > p {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    color: #6d5b5b;
+
+    font-size: 16px;
+
+    line-height: 2;
+}
+
+
+/* ---------- SOFT ABOUT SECTION ---------- */
+
+.about {
+    background: #f7ebe5;
+
+    text-align: center;
+
+    border-top: 1px solid #eadbd5;
+    border-bottom: 1px solid #eadbd5;
+}
+
+.about p {
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #6b5959;
+
+    font-size: 17px;
+
+    line-height: 2;
+}
+
+
+/* ---------- FEATURE CARDS ---------- */
+
+.products {
+    display: flex;
+
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    margin-top: 45px;
+}
+
+
+.product-card {
+    width: 300px;
+
+    background: #ffffff;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border: 1px solid #eadbd5;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 30px rgba(80, 50, 40, 0.08);
+
+    transition: all 0.4s ease;
+}
+
+
+/* Card hover */
+
+.product-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #c9a96b;
+
+    box-shadow:
+        0 18px 40px rgba(80, 50, 40, 0.15);
+}
+
+
+/* Card heading */
+
+.product-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 27px;
+
+    color: #6f4b4b;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+/* Card paragraph */
+
+.product-card p {
+    color: #756363;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 34px;
+
+    background: #b9975b;
+
+    color: white;
+
+    border: 1px solid #b9975b;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    transition: all 0.35s ease;
+
+    box-shadow:
+        0 6px 18px rgba(120, 85, 45, 0.20);
+}
+
+
+/* Button hover */
+
+.btn:hover {
+    background: transparent;
+
+    color: #b9975b;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(120, 85, 45, 0.15);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background: #382929;
+
+    color: #eee1dc;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* Footer brand feeling */
+
+footer p:last-child {
+    color: #c9a96b;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+}
+
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .logo {
+        font-size: 32px;
+    }
+
+
+    nav {
+        gap: 18px;
+    }
+
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    .hero {
+        min-height: 430px;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    section {
+        padding: 65px 5%;
+    }
+
+
+    .section-title {
+        font-size: 40px;
+    }
+
+
+    .products {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .product-card {
+        width: 90%;
+
+        max-width: 330px;
+    }
+}

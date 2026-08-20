@@ -1,0 +1,218 @@
+/* ==============================
+   ELORIA - CONTACT PAGE
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background:
+        linear-gradient(rgba(250, 247, 245, 0.88), rgba(250, 247, 245, 0.93)),
+        url("back2.jpg") center / cover fixed;
+    color: #3d3431;
+    line-height: 1.6;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+    width: 100%;
+    padding: 22px clamp(24px, 8vw, 128px);
+    background: #fffdfb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eadfd8;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #9b6f5a;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    border-radius: 50%;
+    flex: 0 0 44px;
+    background: #fffaf7;
+}
+
+.logo-mark img {
+    display: block;
+    width: 98px;
+    max-width: none;
+    transform: translate(-26px, -12px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    color: #171414;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2c2a29;
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a66b55;
+    
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ==============================
+   CONTACT SECTION
+   ============================== */
+
+.contact-section {
+    padding: 80px 8%;
+}
+
+/* Intro */
+
+.contact-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-intro h1 {
+    font-size: 48px;
+    color: #8f6654;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.contact-intro h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: #c6a18e;
+    margin: 15px auto 25px;
+}
+
+.contact-intro p {
+    font-size: 17px;
+    color: #756963;
+}
+
+/* ==============================
+   MAIN CONTAINER
+   ============================== */
+
+.contact-container {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: stretch;
+}
+
+/* ==============================
+   CONTACT INFORMATION
+   ============================== */
+
+.contact-info {
+    background: #eee3dc;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(90, 65, 55, 0.08);
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-size: 27px;
+    color: #8f6654;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    padding: 18px 0;
+    border-bottom: 1px solid #d8c7bd;
+}
+
+.info-box:last-child {
+    border-bottom: none;
+}
+
+.info-box h3 {
+    font-size: 17px;
+    color: #6e5043;
+    margin-bottom: 5px;
+}
+
+.info-box p {
+    color: #756963;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* ==============================
+   CONTACT FORM
+   ============================== */
+
+.contact-form {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(80, 60, 50, 0.10);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #5d4b43;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ded0c8;
+    border-radius: 10px;
+    background: #fcfaf9;
+    font-family

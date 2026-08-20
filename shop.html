@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eloria | Shop</title>
+
+    <style>
+        
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* ---------- BASIC ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(back2.jpg);
+    background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	background-attachment: fixed;
+    color: #3d3030;
+    line-height: 1.7;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+header {
+    background: rgba(255, 250, 247, 0.97);
+    padding: 20px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #eadbd5;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(80, 50, 40, 0.08);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #8b5e5e;
+    letter-spacing: 2px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    color: #171414;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2c2a29;
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a66b55;
+    
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 600px;
+
+    background-image:
+        linear-gradient(
+            rgba(40, 25, 25, 0.35),
+            rgba(40, 25, 25, 0.35)
+        ),
+        url("images/jewellery.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 750px;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 65px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+    text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 300;
+
+    margin-bottom: 35px;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 32px;
+
+    background: #b9975b;
+    color: white;
+
+    border: 1px solid #b9975b;
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    transition: all
+}
+    </style>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="site-chrome.css">
+    <script src="shop-catalog.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo"><span class="logo-mark"><img src="eloria-logo.jpg" alt="Eloria logo"></span><span>Eloria</span></div>
+
+        <nav>
+
+				<ul>
+
+					<li>
+						<a href="home.html">Home</a>
+					</li>
+
+					<li>
+						<a href="shop.html">Shop</a>
+					</li>
+
+					<li>
+						<a href="about.html">About</a>
+					</li>
+
+					<li>
+						<a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+					</li>
+
+					<li>
+						<a href="Contact us.html">Contact us</a>
+					</li>
+
+				</ul>
+
+			</nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Welcome to Eloria</h1>
+
+            <p>
+                Discover handmade jewellery created with love,
+                creativity, and timeless elegance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="shop-search" aria-labelledby="search-title">
+        <h2 id="search-title" class="section-title">Find Your Perfect Piece</h2>
+        <label class="search-field" for="product-search">
+            <span class="sr-only">Search the collection</span>
+            <input id="product-search" type="search" placeholder="Search necklaces, earrings, bracelets..." autocomplete="off">
+        </label>
+        <p id="search-status" class="search-status" aria-live="polite"></p>
+    </section>
+
+    <main id="collection-grid" class="collection-grid" aria-label="Jewellery collections"></main>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>&copy; 2026 Eloria. All Rights Reserved.</p>
+
+        <p>
+            Handmade with ♡
+        </p>
+
+    </footer>
+
+
+
+</body>
+</html>
