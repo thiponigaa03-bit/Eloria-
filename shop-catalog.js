@@ -7,14 +7,14 @@ const catalog = {
 };
 
 const productNames = {
-    Pearls: ['Classic Pearl Necklace', 'Pearl Drop Earrings', 'Pearl Bridal Set', 'Pearl Charm Bracelet', 'Freshwater Pearl Pendant', 'Pearl Stud Earrings', 'Pearl Layered Necklace', 'Pearl Bloom Earrings', 'Pearl Elegance Set', 'Pearl Crystal Bracelet', 'Pearl Drop Pendant', 'Pearl Evening Earrings'],
-    Terracotta: ['Terracotta Floral Necklace', 'Terracotta Jhumka Earrings', 'Terracotta Statement Set', 'Terracotta Bead Bracelet', 'Terracotta Leaf Pendant', 'Terracotta Stud Earrings', 'Terracotta Heritage Necklace', 'Terracotta Bell Earrings', 'Terracotta Classic Set', 'Terracotta Charm Bracelet', 'Terracotta Art Pendant', 'Terracotta Party Earrings'],
-    Resin: ['Resin Bloom Necklace', 'Resin Petal Earrings', 'Resin Art Set', 'Resin Charm Bracelet', 'Resin Flower Pendant', 'Resin Mini Studs', 'Resin Colour Pop Necklace', 'Resin Teardrop Earrings', 'Resin Luxe Set', 'Resin Bead Bracelet', 'Resin Heart Pendant', 'Resin Statement Earrings'],
-    'Sea Shell': ['Sea Shell Necklace', 'Shell Drop Earrings', 'Coastal Shell Set', 'Shell Charm Bracelet', 'Ocean Shell Pendant', 'Shell Stud Earrings', 'Beach Pearl Necklace', 'Seaside Hoop Earrings', 'Shell Elegance Set', 'Shell Bead Bracelet', 'Starfish Shell Pendant', 'Coastal Statement Earrings'],
-    'Thread Work': ['Threadwork Necklace', 'Thread Tassel Earrings', 'Threadwork Festival Set', 'Thread Bead Bracelet', 'Thread Flower Pendant', 'Thread Stud Earrings', 'Thread Layered Necklace', 'Thread Drop Earrings', 'Threadwork Classic Set', 'Thread Charm Bracelet', 'Thread Art Pendant', 'Thread Statement Earrings']
+    Pearls: ['Classic Pearl Necklace', 'Pearl Necklace ', 'Pearl necklace ', 'Pearl bow Earrings', 'Pearl  Earrings', 'Pearl Stud Earrings', 'Pearl Layered bracelet', 'Pearl Bloom bracelet', 'Pearl Elegance bracelet', 'Pearl Anklet', 'Pearl bloom anklet', 'Pearl drop anklet'],
+    Terracotta: ['Terracotta Floral Necklace', 'Terracotta necklace', 'Terracotta triangle necklace', 'Terracotta Bead necklace', 'Terracotta round earrings', 'Terracotta Stud Earrings', 'Terracotta Heritage earrings', 'Terracotta round bracelet', 'Terracotta Classic bracelet', 'Terracotta Charm Bracelet', 'Terracotta Art anklet', 'Terracotta Party anklet'],
+    Resin: ['Resin Bloom Necklace', 'Resin Round necklace', 'Resin Art necklace', 'Resin Charm earrings', 'Resin Flower Earrings', 'Resin Mini earrings', 'Resin black earrings', 'Resin anklet', 'Resin Luxe anklet', 'Resin Bead Bracelet', 'Resin round anklet', 'Resin Statement bracelet'],
+    'Sea Shell': ['Sea Shell Necklace', 'Shell Drop necklace', 'Coastal Shell necklace', 'Shell Charm Bracelet', 'Ocean Shell bracelet', 'Shell Stud bracelet', 'Beach Pearl Earrings', 'Seaside Hoop Earrings', 'Shell Elegance earrings', 'Shell Bead anklet', ' Shell anklet ', 'Coastal Statement anklet'],
+    'Thread Work': ['Threadwork Necklace', 'Thread Tassel Necklace', 'Threadwork Festival necklace', 'Thread Bead Bangles', 'Thread Flower bangles', 'Thread brown bangles', 'Thread drop anklet', 'Thread Layered anklet', 'Threadwork Classic anklett', 'Thread Charm Earrings', 'Thread Art earrings', 'Thread Statement Earrings']
 };
 
-const mediumPrices = ['Rs. 3,200', 'Rs. 2,500', 'Rs. 4,200', 'Rs. 2,800', 'Rs. 3,000', 'Rs. 2,400', 'Rs. 3,600', 'Rs. 2,700', 'Rs. 4,400', 'Rs. 2,900', 'Rs. 3,100', 'Rs. 2,600'];
+const mediumPrices = ['Rs. 1,200', 'Rs. 2,200', 'Rs. 1,200', 'Rs. 2,800', 'Rs. 2,000', 'Rs. 2,400', 'Rs. 1,600', 'Rs. 2,700', 'Rs. 2,400', 'Rs. 2,900', 'Rs. 1,100', 'Rs. 2,600'];
 
 const collectionGrid = document.querySelector('#collection-grid');
 
