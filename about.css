@@ -482,3 +482,49 @@ footer p:last-child {
         max-width: 330px;
     }
 }
+
+
+/* =========================================
+   ABOUT PAGE - DARK MODE
+   ========================================= */
+
+body.dark-mode {
+    background: #211b1a !important;
+    color: #f3e8e2;
+}
+
+body.dark-mode section {
+    background: #211b1a;
+}
+
+body.dark-mode .about {
+    background: #302624;
+    border-color: #51413c;
+}
+
+body.dark-mode .section-title {
+    color: #e1c27d;
+}
+
+body.dark-mode section > p,
+body.dark-mode .about p {
+    color: #d2c2bc;
+}
+
+body.dark-mode .product-card {
+    background: #302624;
+    border-color: #51413c;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .product-card h3 {
+    color: #e1c27d;
+}
+
+body.dark-mode .product-card p {
+    color: #d2c2bc;
+}
+
+body.dark-mode footer {
+    background: #171211 !important;
+}

@@ -112,3 +112,95 @@ footer p:last-child {
     header nav ul li a { font-size: 14px; }
     .cart-link { position: absolute; right: 5%; top: 20px; }
 }
+
+/* =========================================
+   ELORIA THEME TOGGLE
+   ========================================= */
+
+.theme-toggle {
+    width: 48px;
+    height: 30px;
+
+    border: 1px solid #c9a96b;
+    border-radius: 999px;
+
+    background: #fffaf7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 3px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(80, 50, 40, 0.15);
+}
+
+.theme-sun {
+    display: inline;
+}
+
+.theme-moon {
+    display: none;
+}
+
+
+/* =========================================
+   DARK MODE - SHARED
+   ========================================= */
+
+body.dark-mode {
+    background-color: #211b1a !important;
+    color: #f5e9e3;
+}
+
+
+/* Header */
+
+body.dark-mode header {
+    background: #2b2321 !important;
+    border-color: #4e403b !important;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo {
+    color: #e2c27d !important;
+}
+
+body.dark-mode header nav {
+    background: #352a27 !important;
+    border-color: #574843 !important;
+}
+
+body.dark-mode header nav ul li a {
+    color: #f4e9e3 !important;
+}
+
+body.dark-mode header nav ul li a:hover {
+    color: #d4b46c !important;
+}
+
+
+/* Theme button */
+
+body.dark-mode .theme-toggle {
+    background: #443531;
+    border-color: #c9a96b;
+}
+
+body.dark-mode .theme-sun {
+    display: none;
+}
+
+body.dark-mode .theme-moon {
+    display: inline;
+}

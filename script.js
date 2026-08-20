@@ -58,8 +58,10 @@ function renderCart() {
     if (!cartItems) return;
 
     const cart = getCart();
-    const total = cart.reduce((sum, item) => sum + Number(String(item.price).replace(/[^0-9.]/g, '')) * item.quantity, 0);
-
+    const total = cart.reduce((sum, item) => {
+        const price = Number(String(item.price).replace(/[^0-9]/g, ''));
+        return sum + price * item.quantity;
+    }, 0);
     cartItems.innerHTML = cart.length
         ? cart.map((item, index) => `<article class="cart-item"><img src="${item.image}" alt="${item.name}"><div><h2>${item.name}</h2><p>${item.price}</p><div class="cart-actions"><button data-cart-change="${index}" data-change="-1">−</button><span>${item.quantity}</span><button data-cart-change="${index}" data-change="1">+</button><button class="remove-item" data-cart-remove="${index}">Remove</button></div></div></article>`).join('')
         : '<p class="empty-cart">Your cart is empty. Discover a piece you love in our shop.</p>';

@@ -215,4 +215,85 @@ nav ul li a:hover::after {
     border: 1px solid #ded0c8;
     border-radius: 10px;
     background: #fcfaf9;
-    font-family
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   CONTACT PAGE - DARK MODE
+   ========================================= */
+
+body.dark-mode {
+    background:
+        linear-gradient(
+            rgba(33, 27, 26, 0.94),
+            rgba(33, 27, 26, 0.96)
+        ),
+        url("back2.jpg") center / cover fixed;
+
+    color: #f3e8e2;
+}
+
+body.dark-mode .contact-section {
+    background: transparent;
+}
+
+body.dark-mode .contact-intro h1 {
+    color: #e1c27d;
+}
+
+body.dark-mode .contact-intro p {
+    color: #d2c2bc;
+}
+
+body.dark-mode .contact-info {
+    background: #302624;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .contact-info h2,
+body.dark-mode .contact-form h2 {
+    color: #e1c27d;
+}
+
+body.dark-mode .info-box {
+    border-color: #51413c;
+}
+
+body.dark-mode .info-box h3 {
+    color: #d4b46c;
+}
+
+body.dark-mode .info-box p {
+    color: #c8b8b1;
+}
+
+body.dark-mode .contact-form {
+    background: #302624;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .input-group label {
+    color: #d9cbc5;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group textarea {
+    background: #211b1a;
+    color: #f3e8e2;
+    border-color: #5a4841;
+}
+
+body.dark-mode .input-group input::placeholder,
+body.dark-mode .input-group textarea::placeholder {
+    color: #9d8e87;
+}
+
+body.dark-mode .contact-form button {
+    background: #b9975b;
+    color: #211b1a;
+}
+
+body.dark-mode footer {
+    background: #171211 !important;
+}
