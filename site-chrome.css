@@ -1,24 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
 /* Shared header and footer for every Eloria page */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 header {
-    background: rgba(255, 250, 247, 0.98) !important;
-    padding: 20px clamp(24px, 8vw, 128px) !important;
+    background: rgba(148, 139, 129, 0.96) !important;
+    padding: 18px clamp(24px, 7vw, 112px) !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 28px;
-    border-bottom: 1px solid #eadbd5;
+    border-bottom: 0;
     box-shadow: 0 3px 15px rgba(80, 50, 40, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Poppins', Arial, sans-serif !important;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #8b5e5e;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    font-weight: 700;
-    letter-spacing: 3px;
+    color: #302623;
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
 }
 
 .logo h2 { margin: 0; color: inherit; font: inherit; }
@@ -47,10 +59,10 @@ body h3 {
 
 header nav {
     margin-left: auto;
-    padding: 8px 16px;
-    border: 1px solid #eadbd5;
-    border-radius: 999px;
-    background: rgba(244, 232, 225, 0.78);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
 }
 
 header nav ul {
@@ -62,7 +74,12 @@ header nav ul {
     padding: 0;
 }
 
-header nav ul li a { font-size: 16px; color: #302623; text-decoration: none; }
+header nav ul li a { position: relative; font-family: 'Poppins', Arial, sans-serif !important; font-size: 20px !important; font-weight: 500 !important; color: #171414; text-decoration: none; transition: color .3s ease; }
+header nav ul li a::after { content: ""; position: absolute; width: 0; height: 2px; background: #2c2a29; left: 50%; bottom: -7px; transform: translateX(-50%); transition: width .3s ease; }
+header nav ul li a:hover::after,
+header nav ul li a[aria-current="page"]::after { width: 100%; }
+header nav ul li a:hover,
+header nav ul li a[aria-current="page"] { color: #a66b55; }
 header .icons { display: none; }
 
 .cart-link {
@@ -95,6 +112,7 @@ footer {
     text-align: center;
     padding: 35px 20px !important;
     letter-spacing: 0.5px;
+    font-family: 'Poppins', Arial, sans-serif !important;
 }
 
 footer p { margin: 5px; }
@@ -107,9 +125,9 @@ footer p:last-child {
 
 @media (max-width: 768px) {
     header { padding: 18px 5% !important; flex-direction: column; gap: 14px; }
-    header nav { margin-left: 0; padding: 7px 12px; }
+    header nav { margin-left: 0; padding: 0; }
     header nav ul { justify-content: center; flex-wrap: wrap; gap: 12px 20px; }
-    header nav ul li a { font-size: 14px; }
+    header nav ul li a { font-size: 14px !important; }
     .cart-link { position: absolute; right: 5%; top: 20px; }
 }
 
@@ -145,11 +163,13 @@ footer p:last-child {
     box-shadow: 0 4px 12px rgba(80, 50, 40, 0.15);
 }
 
-.theme-sun {
+.theme-sun,
+.sun-icon {
     display: inline;
 }
 
-.theme-moon {
+.theme-moon,
+.moon-icon {
     display: none;
 }
 
@@ -177,8 +197,8 @@ body.dark-mode .logo {
 }
 
 body.dark-mode header nav {
-    background: #352a27 !important;
-    border-color: #574843 !important;
+    background: transparent !important;
+    border-color: transparent !important;
 }
 
 body.dark-mode header nav ul li a {
@@ -197,10 +217,84 @@ body.dark-mode .theme-toggle {
     border-color: #c9a96b;
 }
 
-body.dark-mode .theme-sun {
+body.dark-mode .theme-sun,
+body.dark-mode .sun-icon {
     display: none;
 }
 
-body.dark-mode .theme-moon {
+body.dark-mode .theme-moon,
+body.dark-mode .moon-icon {
     display: inline;
+}
+
+/* Page content that is shared or used by the home and cart pages. */
+body.dark-mode .categories,
+body.dark-mode .products,
+body.dark-mode .why { background: #211b1a !important; }
+body.dark-mode .materials,
+body.dark-mode .best { background: #2b2321 !important; }
+body.dark-mode .card,
+body.dark-mode .product,
+body.dark-mode .why-container > div,
+body.dark-mode .material { background: #302624 !important; color: #f3e8e2 !important; }
+body.dark-mode .card h3,
+body.dark-mode .product h3,
+body.dark-mode .material h3,
+body.dark-mode .why-container h3,
+body.dark-mode section h2 { color: #e1c27d !important; }
+body.dark-mode .why-container p { color: #d2c2bc !important; }
+/* Keep banner photography visible in dark mode while retaining contrast for text. */
+body.dark-mode .hero {
+    background: linear-gradient(rgba(25, 17, 15, 0.60), rgba(25, 17, 15, 0.60)), url("back2.jpg") center / cover no-repeat !important;
+}
+body.dark-mode .cart-page { background: linear-gradient(rgba(33, 27, 26, .66), rgba(33, 27, 26, .74)), url("back2.jpg") center / cover fixed; }
+body.dark-mode .cart-page h1,
+body.dark-mode .cart-item h2 { color: #e1c27d; }
+body.dark-mode .cart-item { background: #302624; border-color: #51413c; }
+body.dark-mode .cart-item p,
+body.dark-mode .empty-cart { color: #d2c2bc; }
+body.dark-mode .cart-actions button { background: #211b1a; color: #f3e8e2; border-color: #b9975b; }
+
+/* Account panel, used on the home page. */
+.account-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1100;
+    min-width: 132px;
+    height: 58px;
+    border: 2px solid #fff7ee;
+    border-radius: 999px;
+    background: #a66b55;
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(62, 39, 35, 0.38), 0 0 0 5px rgba(166, 107, 85, 0.18);
+    cursor: pointer;
+    font: 600 16px/1 'Poppins', Arial, sans-serif;
+}
+
+.account-fab:hover { background: #754638; transform: translateY(-3px) scale(1.03); }
+.account-dialog { position: fixed; inset: 0; width: min(440px, calc(100% - 32px)); height: fit-content; margin: auto; border: 0; border-radius: 18px; padding: 0; background: #fffaf7; box-shadow: 0 24px 70px rgba(37, 23, 20, 0.35); }
+.account-dialog::backdrop { background: rgba(32, 22, 20, 0.58); backdrop-filter: blur(3px); }
+.account-panel { padding: 34px; color: #3d3030; }
+.account-panel h2 { margin: 0 0 6px; font-size: 34px; color: #6f4b4b; }
+.account-panel > p { margin: 0 0 22px; color: #756963; }
+.dialog-close { float: right; border: 0; background: transparent; color: #6f4b4b; font-size: 27px; cursor: pointer; }
+.account-form { display: grid; gap: 14px; }
+.account-form[hidden] { display: none !important; }
+.account-form label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+.account-form input { width: 100%; padding: 12px 13px; border: 1px solid #d8c7bd; border-radius: 9px; background: #fff; font: inherit; }
+.account-submit { border: 0; border-radius: 999px; padding: 12px 18px; background: #b9975b; color: #fff; cursor: pointer; font: 600 15px 'Poppins', sans-serif; }
+.account-switch { margin: 18px 0 0; font-size: 14px; text-align: center; }
+.account-switch button { border: 0; background: transparent; color: #8b5e5e; font: inherit; font-weight: 700; cursor: pointer; text-decoration: underline; }
+.account-message { min-height: 22px; margin: 8px 0 0; color: #8b5e5e; font-size: 14px; }
+body.dark-mode .account-dialog { background: #302624; }
+body.dark-mode .account-panel { color: #f3e8e2; }
+body.dark-mode .account-panel h2 { color: #e1c27d; }
+body.dark-mode .account-panel > p { color: #d2c2bc; }
+body.dark-mode .dialog-close, body.dark-mode .account-switch button { color: #e1c27d; }
+body.dark-mode .account-form input { background: #211b1a; border-color: #5a4841; color: #f3e8e2; }
+
+@media (max-width: 500px) {
+    .account-fab { right: 16px; bottom: 16px; min-width: 58px; padding: 0 16px; }
+    .account-panel { padding: 26px 22px; }
 }

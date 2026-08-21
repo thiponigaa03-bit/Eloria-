@@ -875,6 +875,8 @@ body.dark-mode footer {
 						<a href="Contact us.html">Contact us</a>
 					</li>
 
+                    <li><button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false"><span class="theme-sun">☀️</span><span class="theme-moon">🌙</span></button></li>
+
 				</ul>
 
 			</nav>
@@ -1180,6 +1182,31 @@ body.dark-mode footer {
 			<p>Handmade with ♡</p>
 
 		</footer>
+
+        <button id="account-fab" class="account-fab" type="button" aria-label="Open account sign in">👤&nbsp; Sign in</button>
+        <dialog id="account-dialog" class="account-dialog" aria-labelledby="account-title">
+            <div class="account-panel">
+                <button class="dialog-close" type="button" data-dialog-close aria-label="Close">×</button>
+                <h2 id="account-title">Welcome back</h2>
+                <p id="account-intro">Sign in to continue your Eloria journey.</p>
+                <form id="login-form" class="account-form">
+                    <label>Email or username<input type="text" name="identity" autocomplete="username" required></label>
+                    <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+                    <button class="account-submit" type="submit">Sign in</button>
+                    <p class="account-switch">New to Eloria? <button type="button" data-account-view="register">Create an account</button></p>
+                </form>
+                <form id="register-form" class="account-form" hidden>
+                    <label>Full name<input type="text" name="full-name" autocomplete="name" required></label>
+                    <label>Email address<input type="email" name="email" autocomplete="email" required></label>
+                    <label>Phone number<input type="tel" name="phone" autocomplete="tel" required></label>
+                    <label>Password<input type="password" name="password" minlength="8" autocomplete="new-password" required></label>
+                    <label>Confirm password<input type="password" name="confirm-password" minlength="8" autocomplete="new-password" required></label>
+                    <button class="account-submit" type="submit">Create account</button>
+                    <p class="account-switch">Already have an account? <button type="button" data-account-view="login">Sign in</button></p>
+                </form>
+                <p id="account-message" class="account-message" aria-live="polite"></p>
+            </div>
+        </dialog>
 
 		<script src="script.js"></script>
 
