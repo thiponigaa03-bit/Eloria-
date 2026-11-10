@@ -15,25 +15,33 @@ const productNames = {
 };
 
 const mediumPrices = ['Rs. 1,200', 'Rs. 2,200', 'Rs. 1,200', 'Rs. 2,800', 'Rs. 2,000', 'Rs. 2,400', 'Rs. 1,600', 'Rs. 2,700', 'Rs. 2,400', 'Rs. 2,900', 'Rs. 1,100', 'Rs. 2,600'];
+const elevenElevenOffer = new URLSearchParams(window.location.search).get('offer') === '1111';
+
+function applyElevenElevenDiscount(price) {
+    const amount = Number(price.replace(/[^0-9]/g, ''));
+    return `Rs. ${Math.round(amount * 0.75).toLocaleString()}`;
+}
 
 const collectionGrid = document.querySelector('#collection-grid');
 
 if (collectionGrid) {
-    collectionGrid.innerHTML = Object.entries(catalog).map(([category, images]) => `
+    collectionGrid.innerHTML = `${elevenElevenOffer ? '<div class="eleven-banner">11:11 offer active — 25% off is applied to every product below.</div>' : ''}${Object.entries(catalog).map(([category, images]) => `
         <section class="collection-group" data-category="${category.toLowerCase()}">
             <h2>${category}</h2>
             <div class="collection-products">
                 ${images.map((image, index) => {
                     const name = productNames[category][index];
-                    const price = mediumPrices[index];
-                    return `<article class="shop-product" data-product data-product-name="${name}" data-product-price="${price}" data-product-image="${image}">
+                    const originalPrice = mediumPrices[index];
+                    const price = elevenElevenOffer ? applyElevenElevenDiscount(originalPrice) : originalPrice;
+                    const productId = `${category.toLowerCase().replace(/\s+/g, '-')}-${index + 1}`;
+                    return `<article class="shop-product" data-product data-product-id="${productId}" data-product-stock="12" data-product-name="${name}" data-product-price="${price}" data-product-image="${image}">
                         <img src="${image}" alt="${name}" loading="lazy">
-                        <h3>${name}</h3><p class="price">${price}</p>
+                        <h3>${name}</h3>${elevenElevenOffer ? `<span class="original-price">${originalPrice}</span>` : ''}<p class="price ${elevenElevenOffer ? 'offer-price' : ''}">${price}</p><p class="stock-label" data-stock-label>12 available</p>
                         <button type="button" data-add-to-cart>Add to Cart</button>
                     </article>`;
                 }).join('')}
             </div>
-        </section>`).join('');
+        </section>`).join('')}`;
 
     const productSearch = document.querySelector('#product-search');
     const searchStatus = document.querySelector('#search-status');
@@ -54,4 +62,11 @@ if (collectionGrid) {
 
         searchStatus.textContent = query ? `${matches} item${matches === 1 ? '' : 's'} found` : '';
     });
+
+    const searchFromHome = new URLSearchParams(window.location.search).get('search');
+    if (searchFromHome) {
+        productSearch.value = searchFromHome;
+        productSearch.dispatchEvent(new Event('input'));
+        document.querySelector('.shop-search')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }

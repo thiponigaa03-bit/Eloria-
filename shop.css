@@ -168,6 +168,9 @@ nav a:hover::after {
 .shop-product img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .shop-product h3 { margin: 14px 12px 4px; color: #513a34; font-size: 18px; }
 .shop-product .price { margin: 0 0 12px; color: #8b5e5e; }
+.shop-product .stock-label { margin: -5px 0 12px; color: #756963; font-size: 13px; }
+.shop-product button:disabled { background: #a99c97; cursor: not-allowed; }
+.eleven-banner { max-width: 1040px; margin: 10px auto 34px; padding: 16px 22px; border-radius: 14px; background: #6f4b4b; color: #fff8ec; text-align: center; font-weight: 600; }.original-price { display: block; color: #8e817c; font-size: 13px; text-decoration: line-through; }.offer-price { color: #a66b55 !important; font-weight: 700; }
 .shop-product button { padding: 9px 16px; border: 0; border-radius: 999px; background: #8b5e5e; color: #fff; cursor: pointer; font: inherit; }
 
 .hero {

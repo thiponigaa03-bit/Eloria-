@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="site-chrome.css">
     <link rel="stylesheet" href="cart.css">
     <script src="script.js" defer></script>
+    <script src="checkout.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="cart.html">Cart (<span data-cart-count>0</span>)</a></li>
-                <li><a href="Contact us.html">Contact us</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
 
                 <li>
                     <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
@@ -28,7 +29,8 @@
             </ul>
         </nav>
     </header>
-    <main class="cart-page"><h1>Your Cart</h1><section id="cart-items" class="cart-items"></section><div class="cart-summary"><span>Total</span><strong id="cart-total">Rs. 0</strong><a href="shop.html">Continue Shopping</a><button id="checkout-button" type="button">Checkout</button></div></main>
+    <main class="cart-page"><h1>Your Cart</h1><section id="cart-items" class="cart-items"></section><div class="cart-summary"><span>Total</span><strong id="cart-total">Rs. 0</strong><a href="shop.html">Continue Shopping</a><a href="orders.html">Order History</a><button id="checkout-button" type="button">Checkout</button></div>
+        <section id="checkout-panel" class="checkout-panel" hidden aria-labelledby="checkout-title"><h2 id="checkout-title">Checkout details</h2><p>Complete your delivery details, then choose a payment method.</p><form id="checkout-form" novalidate><div class="checkout-grid"><label>Full name<input name="name" autocomplete="name" required minlength="2"></label><label>Email address<input type="email" name="email" autocomplete="email" required></label><label>Telephone number<input type="tel" name="telephone" inputmode="numeric" pattern="^(?:[+]94|0)7[0-9]{8}$" placeholder="0771234567" required></label><label class="checkout-address">Delivery address<textarea name="deliveryAddress" autocomplete="street-address" minlength="10" required></textarea></label></div><fieldset><legend>Payment method</legend><label><input type="radio" name="paymentMethod" value="cod" checked> Cash on delivery (COD)</label><label><input type="radio" name="paymentMethod" value="bank-card"> Bank card payment</label></fieldset><div id="card-fields" class="card-fields" hidden><p class="card-note">Card details are only required for bank-card payment.</p><label>Card type<select name="cardBrand" autocomplete="cc-type"><option value="">Choose a card type</option><option value="visa">Visa</option><option value="mastercard">Mastercard</option><option value="amex">American Express</option></select></label><label>Card holder name<input name="cardHolder" autocomplete="cc-name"></label><label>Card number<input name="cardNumber" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="1234 5678 9012 3456"></label><label>Expiry date<input name="expiry" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5"></label><label>CVV<input name="cvv" inputmode="numeric" autocomplete="cc-csc" maxlength="3" placeholder="3 digits"></label></div><button class="place-order" type="submit">Place order</button><p id="checkout-message" role="status"></p></form></section><section id="order-success" class="order-success" hidden aria-live="polite"></section></main>
     <footer><p>© 2026 Eloria. All Rights Reserved.</p><p>Handmade with ♡</p></footer>
 </body>
 </html>

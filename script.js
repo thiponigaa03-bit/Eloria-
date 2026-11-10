@@ -1,5 +1,6 @@
 const CART_KEY = 'eloria-cart';
 const THEME_KEY = 'eloria-theme';
+const INVENTORY_KEY = 'eloria-inventory';
 
 function setTheme(isDark) {
     document.body.classList.toggle('dark-mode', isDark);
@@ -50,17 +51,26 @@ function bindAccountDialog() {
     dialog.querySelectorAll('[data-account-view]').forEach((button) => button.addEventListener('click', () => showForm(button.dataset.accountView === 'register')));
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        if (!loginForm.checkValidity()) { loginForm.reportValidity(); return; }
+        const identity = loginForm.querySelector('[name="identity"]').value.trim();
+        const password = loginForm.querySelector('[name="password"]').value;
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(identity)) { message.textContent = 'Enter a valid email address.'; return; }
+        if (password.length < 8) { message.textContent = 'Your password must contain at least 8 characters.'; return; }
         message.textContent = 'Signed in successfully. Welcome to Eloria!';
         loginForm.reset();
     });
     registerForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        if (!registerForm.checkValidity()) { registerForm.reportValidity(); return; }
         const password = registerForm.querySelector('[name="password"]').value;
         const confirmation = registerForm.querySelector('[name="confirm-password"]').value;
+        const phone = registerForm.querySelector('[name="phone"]').value.replace(/[\s-]/g, '');
+        if (!/^(?:\+94|0)7\d{8}$/.test(phone)) { message.textContent = 'Enter a valid Sri Lankan mobile number.'; return; }
         if (password !== confirmation) { message.textContent = 'Your passwords do not match. Please try again.'; return; }
         message.textContent = 'Your account is ready. Welcome to Eloria!';
         registerForm.reset();
     });
+    registerForm.querySelector('[name="phone"]').addEventListener('input', (event) => { event.target.value = event.target.value.replace(/\D/g, '').slice(0, 10); });
 }
 
 function getCart() {
@@ -76,6 +86,38 @@ function saveCart(cart) {
     updateCartCount();
 }
 
+function getInventory() {
+    try { return JSON.parse(localStorage.getItem(INVENTORY_KEY)) || {}; } catch { return {}; }
+}
+
+function saveInventory(inventory) {
+    localStorage.setItem(INVENTORY_KEY, JSON.stringify(inventory));
+}
+
+function syncShopInventory() {
+    const inventory = getInventory();
+    document.querySelectorAll('[data-product-id]').forEach((card) => {
+        const id = card.dataset.productId;
+        const startingStock = Number(card.dataset.productStock || 12);
+        if (!Number.isFinite(inventory[id])) inventory[id] = startingStock;
+        const stock = inventory[id];
+        const stockLabel = card.querySelector('[data-stock-label]');
+        const button = card.querySelector('[data-add-to-cart]');
+        if (stockLabel) stockLabel.textContent = stock > 0 ? `${stock} available` : 'Sold out';
+        if (button) { button.disabled = stock < 1; button.textContent = stock > 0 ? 'Add to Cart' : 'Sold out'; }
+    });
+    saveInventory(inventory);
+}
+
+function consumeInventory(items) {
+    const inventory = getInventory();
+    items.forEach((item) => {
+        if (!item.id || !Number.isFinite(inventory[item.id])) return;
+        inventory[item.id] = Math.max(0, inventory[item.id] - item.quantity);
+    });
+    saveInventory(inventory);
+}
+
 function updateCartCount() {
     const count = getCart().reduce((total, item) => total + item.quantity, 0);
     document.querySelectorAll('[data-cart-count]').forEach((element) => {
@@ -87,6 +129,11 @@ function addToCart(product) {
     const cart = getCart();
     const existing = cart.find((item) => item.name === product.name);
 
+    if (product.id) {
+        const stock = getInventory()[product.id] ?? product.stock;
+        if (Number.isFinite(stock) && (existing?.quantity || 0) >= stock) return false;
+    }
+
     if (existing) {
         existing.quantity += 1;
     } else {
@@ -94,13 +141,16 @@ function addToCart(product) {
     }
 
     saveCart(cart);
+    return true;
 }
 
 function productFromCard(card) {
     return {
         name: card.dataset.productName || card.querySelector('h3')?.textContent.trim() || 'Eloria jewellery',
         price: card.dataset.productPrice || card.querySelector('.price, p')?.textContent.trim() || 'Rs. 0',
-        image: card.dataset.productImage || card.querySelector('img')?.getAttribute('src') || ''
+        image: card.dataset.productImage || card.querySelector('img')?.getAttribute('src') || '',
+        id: card.dataset.productId || '',
+        stock: Number(card.dataset.productStock || NaN)
     };
 }
 
@@ -109,7 +159,8 @@ function bindCartButtons() {
         if (button.dataset.cartBound) return;
         button.dataset.cartBound = 'true';
         button.addEventListener('click', () => {
-            addToCart(productFromCard(button.closest('[data-product], .product, .shop-product')));
+            const added = addToCart(productFromCard(button.closest('[data-product], .product, .shop-product')));
+            if (!added) { button.textContent = 'Maximum available in cart'; return; }
             button.textContent = 'Added to Cart';
             setTimeout(() => { button.textContent = 'Add to Cart'; }, 1200);
         });
@@ -148,21 +199,13 @@ function renderCart() {
     }));
 }
 
-function bindCheckout() {
-    const checkoutButton = document.querySelector('#checkout-button');
-    if (!checkoutButton) return;
-
-    checkoutButton.addEventListener('click', () => {
-        const cart = getCart();
-        if (!cart.length) {
-            alert('Your cart is empty. Add a jewellery piece before checking out.');
-            return;
-        }
-
-        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-        alert(`Thank you for your order of ${totalItems} item${totalItems === 1 ? '' : 's'} from Eloria. We will contact you to confirm delivery and payment.`);
-        saveCart([]);
-        renderCart();
+function ensureFooterContact() {
+    document.querySelectorAll('footer').forEach((footer) => {
+        if (footer.querySelector('.footer-contact')) return;
+        const contact = document.createElement('div');
+        contact.className = 'footer-contact';
+        contact.innerHTML = '<p class="footer-brand">Eloria Handmade Jewellery</p><div class="footer-contact-details"><span>✉ eloria@gamil.com</span><span>☎ 0746584578</span><span>⌖ Wellawatte, Colombo, Sri Lanka</span></div>';
+        footer.prepend(contact);
     });
 }
 
@@ -171,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
     markCurrentPage();
     updateCartCount();
     bindCartButtons();
+    syncShopInventory();
     renderCart();
-    bindCheckout();
     bindAccountDialog();
+    ensureFooterContact();
 });
